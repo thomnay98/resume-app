@@ -1,38 +1,371 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+:root {
+  --primaryColor: linear-gradient(to right, #355c7d, #6c5b7b, #c06c84);
+  --btnColor: radial-gradient(circle, rgba(119,141,255,1) 0%, rgba(255,134,159,1) 100%);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: var(--primaryColor);
+  color: white!important;
+}
+
+.btn{
+  padding: .5em 1em!important;
+  color: #FFF!important;
+  font-weight: 600!important;
+  border: 3px solid wheat!important;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  transition: color .4s linear;
+}
+
+.btn a{
+  text-decoration: none!important;
+  color: #e9e9e9!important;
+  transition: .5s;
+}
+
+.btn:hover, .btn:hover a{
+  color: #000!important;
+  font-weight: 600;
+}
+
+.btn::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: wheat;
+  z-index: -1;
+  transition: transform .4s ease-in-out;
+  transform-origin: left;
+}
+
+.btn-global::before{
+  transform: scaleX(0);
+}
+
+.btn-global:hover::before{
+  transform: scaleX(1);
+}
+
+/* navbar */
+.navbar{
+  background: var(--primaryColor);
+}
+
+.active{
+  box-shadow: 2px 1px 20px wheat;
+}
+
+.navbar a{
+  color: white!important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none!important;
+}
+
+.nav-brand{
+  font-size: 28px;
+  font-family: 'Dancing Script', cursive;
+  letter-spacing: 3px;
+}
+
+.navbar-toggler{
+  border: none!important;
+  outline: none!important;
+}
+
+.navbar-toggler .fa-bars{
+  color: #fff;
+  font-size: 30px!important;
+}
+
+.navbar-nav li{
+  padding: 0 10px;
+}
+
+.navbar-nav li a{
   text-align: center;
 }
+/* End of navbar */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header */
+header{
+  height: 90vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.header-content{
+  padding-top: 300px;
+  text-align: center;
+  color: #fff;
+}
+
+.header-content a{
+  font-size: 30px;
+}
+
+.header-content a .fa{
+  color: rgb(59, 59, 59);
+  transition: .5s;
+}
+
+.header-content a .fa:hover{
+  color: rgb(32, 32, 32);
+  transform: translateY(5px);
+}
+/* End of Header */
+
+/* Title */
+.section-title {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.section-title h1 {
+  color: wheat;
+  font-size: 50px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.section-title div {
+  width: 120px;
+  height: 5px;
+  margin: 0 auto;
+  background: var(--btnColor);
+}
+/* End of Title */
+
+/* About */
+#about{
+  min-height: 80vh;
+  padding-top: 10vh;
+  margin-bottom:10px;
+}
+
+#about .row div:first-child{
+  padding: 20px 0;
+}
+
+#about .row img{
+  width: 280px;
+  height: 350px;
+  border-radius: 5px;
+}
+
+#about .row p{
+  font-size: 18px;
+}
+
+/* End of About */
+
+/* Skills */
+#skill{
+  min-height: 80vh;
+  padding-top: 80px;
+  margin-bottom: 10px;
+}
+
+#skill .row .col{
+  margin-bottom: 30px;
+}
+
+/* End of Skills */
+
+/* Skill */
+.skill-item{
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  text-align: center;
+  padding: 15px 10px;
+  transition: .6s;
+}
+
+.skill-item img{
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 5px
+}
+
+.skill-item .text-logo{
+  color: #355c7d;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: transform, box-shadow .3s;
+}
+
+.skill-item:hover{
+  transform: translateY(-10px)!important;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+/* End of Skill */
+
+/* Projects */
+#project{
+  padding-top: 80px;
+  min-height: 80vh;
+}
+/* End of Projects */
+
+/* Project */
+.project-item{
+  margin-bottom: 50px;
+}
+
+.project-item .row .project-img{
+  width: 100%;
+  z-index: 999!important;
+}
+
+.project-item .row .project-img img{
+  width: 100%;
+  opacity: .7;
+  border-radius: 5px;
+  transition: .5s;
+}
+
+.project-item .row .project-img img:hover{
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-item .row .project-des {
+  z-index: 1;
+}
+
+.project-item .row .project-des h4{
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.project-item .row .project-des p{
+  font-size: 16px;
+}
+
+.project-item .row .project-des p:nth-child(2){
+  font-size: 18px!important;
+}
+
+.project-btn button:last-child{
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 767px){
+  .project-img{
+    order: 1;
+  }
+  .project-des{
+    order: 2;
+    margin-top: 10px;
   }
 }
+/* End of Project */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Contact */
+#contact{
+  padding-top: 100px;
+}
+#contact div button{
+  margin: 40px 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+/* End of Contact */
+
+/* Footer */
+.footer{
+  position: relative;
+  min-height: 250px;
+  background: #2f2f2f;
+  margin-top: 20px;
+}
+
+.footer span{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.footer span a{
+  background: #fff;
+  position: relative;
+  display: block;
+  margin: 0 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  transition: 0.5s;
+  transform: translate( 0,0px);
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer span a .fab{
+  color: #000;
+  font-size: 30px!important;
+  line-height: 50px;
+  transition: .5s;
 }
+
+.footer span a:hover{
+  transform: rotate(0deg) skew(0deg) translate(0, -10px);
+}
+
+.footer span a:hover .fab{
+  color: #FFF;
+}
+
+.footer span a:nth-child(1):hover{
+  background: #3b5999;
+}
+.footer span a:nth-child(2):hover{
+  background: #783ce1;
+}
+.footer span a:nth-child(3):hover{
+  background: #0077B5;
+}
+.footer span a:nth-child(4):hover{
+  background: #50b0ef; 
+}
+
+.footer div{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.footer div>div{
+  width: 150%;
+  height: 1px;
+  background: white;
+}
+
+.footer div p{
+  margin-top: 50px;
+  margin-bottom: -30px;
+}
+/* End of Footer */
