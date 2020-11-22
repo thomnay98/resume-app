@@ -183,12 +183,14 @@ header{
   width: 280px;
   height: 350px;
   border-radius: 5px;
-  transition: .5s;
+  transition: .7s;
+  filter: blur(10px);
 }
 
 #about .row img:hover{
   transform: translateY(-10px)!important;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  filter: blur(0);
 }
 
 #about .row p{
