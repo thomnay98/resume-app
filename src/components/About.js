@@ -16,7 +16,7 @@ export default function About() {
                         <p>Hi, I'm Nay Thom, a developer living in Ho Chi Minh city. I’m originally from Gia Lai province. I moved to HCM in 2016 as a student at UIT (University of Information Technology).</p>
                         <p>I really love soccer and game, so I usually spend my free time for playing soccer or game with my friend. Besides esports games, I often play blockchain game and spent time to search and research the new one.</p>
                         <p>In terms of work, my immediate goal is to have a stable job, a working environment where I can develop my professional skills, learn new programming knowledge to successfully complete my assigned work. Becoming a fullstack developer is my long-term goal.</p>
-                        <button className="btn btn-global">My CV</button>
+                        <button className="btn btn-global"><a href="https://drive.google.com/file/d/1wMPYW5xHDdS_36h7bPtwXGvmuRTB14IW/view?usp=sharing" target="blank">My CV</a></button>
                     </div>
                 </div>
             </div>
