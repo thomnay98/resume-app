@@ -21,7 +21,7 @@ function App() {
   }, [])
 
   return (
-    <>
+    <div>
       <Navbar />
       <Header />
       <About />
@@ -29,7 +29,7 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -16,7 +16,7 @@ function Navbar() {
     window.addEventListener('scroll', addShadowNavbar);
 
     return (
-        <nav className={shadow?"navbar navbar-expand-md navbar-light fixed-top active":"navbar navbar-expand-lg navbar-light fixed-top"}>
+        <nav className={shadow?"navbar navbar-expand-lg navbar-light active":"navbar navbar-expand-lg navbar-light"}>
             <div className="container">
                 <Link 
                     className="nav-brand" 
@@ -40,8 +40,7 @@ function Navbar() {
                                 spy={true} 
                                 smooth={true} 
                                 offset={-50} 
-                                duration={500} 
-                                
+                                duration={500}   
                             >
                                 Home
                             </Link>

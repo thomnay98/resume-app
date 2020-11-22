@@ -8,15 +8,23 @@ const checkIndex = (index) =>{
     }
 }
 
-function Project({ index, project }) {
+function Project({ index, project, setShowModal, setImage }) {
     return (
         <div className="project-item">
         {
             checkIndex(index)
             ?
             <div className="row">
-                <div data-aos="fade-right" className="col-md justify-content-center project-img" align="center">
-                    <img src={project.image} alt="" />
+                <div data-aos="fade-right" className="col-md project-img" align="center">
+                    <img 
+                        className="img-fluid" 
+                        src={project.image}
+                        onClick={() => {
+                            setShowModal(true);
+                            setImage(project.image)
+                        }}
+                        alt="" 
+                    />
                 </div>
                 <div data-aos="fade-left" className="col-md project-des">
                     <h4 className="text-center">
@@ -96,7 +104,15 @@ function Project({ index, project }) {
                     </span>
                 </div>
                 <div data-aos="fade-left" className="col-md project-img">
-                    <img src={project.image} alt="" />
+                    <img 
+                        className="img-fluid" 
+                        src={project.image}
+                        onClick={() => {
+                            setShowModal(true);
+                            setImage(project.image)
+                        }}
+                        alt="" 
+                    />
                 </div>
             </div>
         }

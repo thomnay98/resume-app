@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Title from './Title';
 import Project from './Project';
+import ModalImage from './ModalImage';
 
 import utTravelImg from '../assets/project/ut-travel-1.PNG';
 import stuCrudImg from '../assets/project/stu-crud-1.PNG';
 import stationAppImg from '../assets/project/station-app-1.jpg';
+import resumeAppImg from '../assets/project/resume-app-1.PNG';
+
 
 const projects = [
     {
@@ -20,13 +23,13 @@ const projects = [
     },
     {
         title: "Mini project - Resume App",
-        description: "Resume Application is a website which is introduce about my self as well as show a few projects that I have done.",
+        description: "Resume Application is a website which is introduce about my self and show some projects that I have done.",
         techUsed: "Technique: ReactJS, Bootstrap",
         member: "Member: Nay Thom",
         roles: "",
-        sourceUrl: "",
+        sourceUrl: "https://github.com/thomnay98/resume-app",
         liveDemo: "",
-        image: stuCrudImg
+        image: resumeAppImg
     },
     {
         title: "Mini project - UT Travel App",
@@ -51,18 +54,27 @@ const projects = [
 ]
 
 export default function Projects() {
+
+    const [image, setImage] = useState();
+    const [showModal, setShowModal] = useState(false);
+
     return (
         <div id="project">
             <div className="container">
                 <Title title="Project" />
-                <div>
-                    {
-                        projects.map((project, index) => {
-                            return <Project key={index} index={index} project={project} />
-                        })
-                    }
-                </div>
+                {
+                    projects.map((project, index) => {
+                        return <Project 
+                                    key={index} 
+                                    index={index} 
+                                    project={project} 
+                                    setShowModal={setShowModal}
+                                    setImage={setImage} 
+                                />
+                    })
+                }
             </div>
+            <ModalImage image={image} showModal={showModal} setShowModal={setShowModal} />
         </div>
     )
 }
