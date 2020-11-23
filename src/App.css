@@ -138,13 +138,24 @@ header{
 }
 
 .header-content a .fa{
-  color: rgb(59, 59, 59);
+  color: rgb(82, 82, 82);
   transition: .5s;
+  animation-name: moving;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 .header-content a .fa:hover{
+  animation-name: none;
   color: rgb(32, 32, 32);
   transform: translateY(5px);
+}
+
+@keyframes moving {
+  50% {
+    color: rgb(32, 32, 32);
+    transform: translateY(15px);
+  }
 }
 /* End of Header */
 
