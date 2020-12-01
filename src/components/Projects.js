@@ -8,6 +8,7 @@ import utTravelImg from '../assets/project/ut-travel-1.PNG';
 import stuCrudImg from '../assets/project/stu-crud-1.PNG';
 import stationAppImg from '../assets/project/station-app-1.jpg';
 import resumeAppImg from '../assets/project/resume-app-1.PNG';
+import todoAppImg from '../assets/project/todojs-logo.PNG';
 
 
 const projects = [
@@ -50,6 +51,16 @@ const projects = [
         sourceUrl: "https://github.com/thomnay98/student-crud-app-redux",
         liveDemo: "https://thomnay98.github.io/student-crud-app-redux",
         image: stuCrudImg
+    },
+    {
+        title: "Mini project - ToDo List App",
+        description: "Build ToDo List App using HTML, CSS, Vanilla JS with the function of add, delete work",
+        techUsed: "Technique: HTML, CSS, JavaScript",
+        member: "Member: Nay Thom",
+        roles: "",
+        sourceUrl: "https://github.com/thomnay98/todo-list-app",
+        liveDemo: "https://todo-list-app-neon.vercel.app",
+        image: todoAppImg
     },
 ]
 
